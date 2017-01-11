@@ -1,0 +1,10 @@
+<h3>Team Code: {{model.team}}</h3>
+<p>Team Name: {{model.teamName}}</p>
+<p>City: {{model.teamCity}}</p>
+<p>Arrest count: {{model.arrestCount}}</p>
+<h5>Associated Players:</h5>
+<ul>
+  {{#each model.players as |player|}}
+    <li>{{player.name}}</li>
+  {{/each}}
+</ul>

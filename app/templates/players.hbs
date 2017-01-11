@@ -1,0 +1,11 @@
+<ul>
+  {{#each model as |player|}}
+    <div class="player-item">
+      {{#link-to 'players.player' player.id}}
+        <h4>{{player.name}} | # of Crimes {{player.numberCrimes}}</h4>
+      {{/link-to}}
+    </div>
+  {{/each}}
+</ul>
+<hr>
+{{outlet}}
