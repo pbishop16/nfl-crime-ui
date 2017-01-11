@@ -1,0 +1,23 @@
+<div class="player-item">
+  <h4>{{model.name}}</h4>
+  <div class="">
+    <p>Team: {{model.team}}</p>
+    <p>Team Name: {{model.teamName}}</p>
+    <p>City: {{model.teamCity}}</p>
+    <p>Position: {{model.position}}</p>
+    <p>Arrest Count: {{model.arrestCount}}</p>
+  </div>
+</div>
+<h3>Teams:</h3>
+<ul>
+  {{#each model.teams as |team|}}
+    <li>Team: {{team.teamName}}</li>
+  {{/each}}
+</ul>
+
+<h3>Crimes:</h3>
+<ul>
+  {{#each model.crimes as |crime|}}
+    <li>Encounter: {{crime.encounter}}</li>
+  {{/each}}
+</ul>

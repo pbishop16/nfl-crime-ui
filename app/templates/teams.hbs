@@ -1,0 +1,11 @@
+<ul>
+  {{#each model as |team|}}
+    <div class="team-item">
+      {{#link-to 'teams.team' team.id}}
+        <h4>{{team.teamName}}</h4>
+      {{/link-to}}
+    </div>
+  {{/each}}
+</ul>
+<hr>
+{{outlet}}

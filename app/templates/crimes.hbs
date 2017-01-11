@@ -1,0 +1,11 @@
+<ul>
+  {{#each model as |crime|}}
+    <div class="crime-item">
+      {{#link-to 'crimes.crime' crime.id}}
+        <h4>{{crime.name}} | Encounter - {{crime.encounter}}</h4>
+      {{/link-to}}
+    </div>
+  {{/each}}
+</ul>
+<hr>
+{{outlet}}
