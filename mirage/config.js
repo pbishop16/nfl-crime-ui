@@ -24,12 +24,24 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.2.x/shorthands/
   */
 
-  this.namespace = '/api';
+  this.namespace = '/api/v1';
 
-  this.get('/players', 'player');
+  this.get('/players', function(request, schema) {
+    if (true) {
+      return {players: schema.players.where({team: "TEN"})};
+    } else {
+      return {players: schema.players.findAll('player')};
+    }
+  });
   this.get('/players/:id', 'player');
   this.get('/crimes', 'crime');
-  this.get('/crimes/:id', 'crime');
+  this.get('/crimes/:id', 'crime', function(request, db){
+    let crime = db.crimes.find(request.params.id);
+    return {
+      crime: crime,
+      player_id: db.players.where({ id: crime.project_id })
+    };
+  });
   this.get('/teams', 'team');
   this.get('/teams/:id', 'team');
 }
