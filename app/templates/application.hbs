@@ -1,7 +1,16 @@
-<nav class="nav">
-  {{link-to 'Home' 'index'}}
-  {{link-to 'Players' 'players'}}
-  {{link-to 'Teams' 'teams'}}
-  {{link-to 'Crimes' 'crimes'}}
+<nav class="blue accent-3">
+  <div class="nav-wrapper">
+    {{#link-to 'index'}}<a class="brand-logo">NFL Crime Stats</a>{{/link-to}}
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{!-- <li>{{#link-to 'players'}}<a type="button" class="waves-effect waves-light btn">Players</a>{{/link-to}}</li> --}}
+      {{!-- <li>{{#link-to 'teams'}}<a type="button" class="waves-effect waves-light btn">Teams</a>{{/link-to}}</li> --}}
+      {{!-- <li>{{#link-to 'crimes'}}<a type="button" class="waves-effect waves-light btn">Crimes</a>{{/link-to}}</li> --}}
+      {{#link-to 'players' tagName="li" class=""}}<a href="#">Players</a>{{/link-to}}
+      {{#link-to 'teams' tagName="li" class=""}}<a href="#">Teams</a>{{/link-to}}
+      {{#link-to 'crimes' tagName="li" class=""}}<a href="#">Crimes</a>{{/link-to}}
+    </ul>
+  </div>
 </nav>
-{{outlet}}
+<div class="container-fluid">
+  {{outlet}}
+</div>

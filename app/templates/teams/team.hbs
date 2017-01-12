@@ -1,10 +1,16 @@
-<h3>Team Code: {{model.team}}</h3>
-<p>Team Name: {{model.teamName}}</p>
-<p>City: {{model.teamCity}}</p>
-<p>Arrest count: {{model.arrestCount}}</p>
-<h5>Associated Players:</h5>
-<ul>
-  {{#each model.players as |player|}}
-    <li>{{player.name}}</li>
-  {{/each}}
-</ul>
+<div class="card-content white-text team-card">
+  <span class="card-title">{{model.teamName}}</span>
+  <p>Team Code: {{model.team}}</p>
+  <p>City: {{model.teamCity}}</p>
+  <p>Arrest count: {{model.arrestCount}}</p>
+  <hr>
+  <h6>Associated Players:</h6>
+  <ul>
+    {{#each model.players as |player|}}
+      <li>{{player.name}}</li>
+    {{/each}}
+  </ul>
+</div>
+<div class="card-action">
+
+</div>

@@ -1,17 +1,24 @@
-<p>Arrest Stats ID: {{model.arrestStatsId}}</p>
-<p>Date: {{model.date}}</p>
-<p>Team: {{model.team}}</p>
-<p>Team Name: {{model.teamName}}</p>
-<p> Team City{{model.teamCity}}</p>
-<p>Player Name: {{model.playerId.name}}</p>
-<p>Position: {{model.position}}</p>
-<p>Encounter: {{model.encounter}}</p>
-<p>Catagory: {{model.category}}</p>
-<p> Description: {{model.description}}</p>
-<p>Outcome: {{model.outcome}}</p>
-<p>Category ID: {{model.generalCategoryId}}</p>
-<p>Legal Level: {{model.legalLevelId}}</p>
-<p>Resolution Catetgory ID: {{model.resolutionCategoryId}}</p>
-<p>Year: {{model.year}}</p>
-<p> Month: {{model.month}}</p>
-<p>Day: {{model.day}}</p>
+<div class="card-content white-text crime-card">
+  <span class="card-title">Encounter: {{model.encounter}}</span>
+  <p>Arrest Stats ID: {{model.arrestStatsId}}</p>
+  <p>Date: {{model.date}}</p>
+  <p>Team: {{model.team}}</p>
+  <p>Team Name: {{model.teamName}}</p>
+  <p> Team City{{model.teamCity}}</p>
+  {{!-- <p>Player Name: {{#link-to 'players.player' model.playerId}}{{model.name}}{{/link-to}}</p> --}}
+  <p>Player Name: {{model.name}}</p>
+  <p>Position: {{model.position}}</p>
+  <p>Catagory: {{model.category}}</p>
+  <p> Description: {{model.description}}</p>
+  <p>Outcome: {{model.outcome}}</p>
+  <p>Category ID: {{model.generalCategoryId}}</p>
+  <p>Legal Level: {{model.legalLevelId}}</p>
+  <p>Resolution Catetgory ID: {{model.resolutionCategoryId}}</p>
+  <p>Year: {{model.year}}</p>
+  <p> Month: {{model.month}}</p>
+  <p>Day: {{model.day}}</p>
+  {{!-- <p>Player Name: {{model.playerId.name}}</p> --}}
+</div>
+<div class="">
+
+</div>

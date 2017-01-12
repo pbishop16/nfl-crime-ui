@@ -1,5 +1,5 @@
-<div class="player-item">
-  <h4>{{model.name}}</h4>
+<div class="card-content white-text player-card">
+  <span class="card-title">{{model.name}}</span>
   <div class="">
     <p>Team: {{model.team}}</p>
     <p>Team Name: {{model.teamName}}</p>
@@ -7,17 +7,17 @@
     <p>Position: {{model.position}}</p>
     <p>Arrest Count: {{model.arrestCount}}</p>
   </div>
+  <hr>
+  <h6>Teams:</h6>
+  <ul>
+    {{#each model.teams as |team|}}
+      <li>Team: {{team.teamName}}</li>
+    {{/each}}
+  </ul>
+  <h6>Crimes:</h6>
+  <ul class="">
+    {{#each model.crimes as |crime|}}
+      <li class="">Encounter: {{crime.encounter}}</li>
+    {{/each}}
+  </ul>
 </div>
-<h3>Teams:</h3>
-<ul>
-  {{#each model.teams as |team|}}
-    <li>Team: {{team.teamName}}</li>
-  {{/each}}
-</ul>
-
-<h3>Crimes:</h3>
-<ul>
-  {{#each model.crimes as |crime|}}
-    <li>Encounter: {{crime.encounter}}</li>
-  {{/each}}
-</ul>

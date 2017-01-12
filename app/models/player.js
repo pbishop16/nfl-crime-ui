@@ -10,9 +10,9 @@ export default DS.Model.extend({
   teamCity: attr('string'),
   position: attr('string'),
   arrestCount: attr('number'),
-  crimes: hasMany('crime'),
+  crimes: hasMany('crime', {async: true}),
   teams: hasMany('team'),
-  numberCrimes: Ember.computed('crimes', function(){
-    return this.get('crimes.length');
-  })
+  // numberCrimes: Ember.computed('crimes', function(){
+  //   return this.get('crimes').get('length');
+  // })
 });
