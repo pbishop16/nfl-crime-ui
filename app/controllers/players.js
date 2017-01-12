@@ -6,14 +6,18 @@ export default Ember.Controller.extend({
   page: 1,
   sort_on: '',
   sort_direction: '',
-  // filteredPlayers: Ember.computed('player', 'model', function() {
-  //   let team = this.get('teamCode');
-  //   let players = this.get('model');
-  //
-  //   if (teamCode) {
-  //     return players.filterBy('team', teamCode);
-  //   } else {
-  //     return players;
-  //   }
-  // })
+  filteredPlayers: Ember.computed('model.@each.lastArrestAssociatedTeam', 'teamCode', function() {
+    // let lastArrestAssociatedTeam = this.get('lastArrestAssociatedTeam');
+    let players = this.get('model');
+    let query = this.get('teamCode');
+
+    if (query) {
+      const regexString = '(' + query.split(' ').join(')+.*(') + ')+.*';
+      const regex = new RegExp(regexString, 'ig');
+
+      return players.filterBy('lastArrestAssociatedTeam', teamCode);
+    } else {
+      return players;
+    }
+  })
 });
