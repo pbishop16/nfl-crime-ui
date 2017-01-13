@@ -15,11 +15,8 @@ export default DS.Model.extend({
   category: attr('string'),
   description: attr('string'),
   outcome: attr('string'),
-  // generalCategoryId: attr('number'),
-  // legalLevelId: attr('number'),
-  // resolutionCategoryId: attr('number'),
   year: attr('string'),
   month: attr('string'),
   day: attr('string'),
-  player: belongsTo('player', {async: false})
+  playerId: belongsTo('player', {async: false})
 });
