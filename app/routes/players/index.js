@@ -2,11 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   queryParams: {
-    page: {refreshModel: true}
+    page: {refreshModel: true},
+    search: {refreshModel: true}
   },
   model(params) {
+      let players = this.store.query('player', { page: params.page});
+      if (params.search) {
+        players = this.store.query('player', { page: params.page, search: params.search });
+      }
       return Ember.RSVP.hash({
-        players: this.store.query('player', { page: params.page }),
+        players: players,
         topPlayers: this.store.findAll('top-player')
       });
   },

@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams: ['page'],
+  queryParams: ['page', 'search'],
   teamCode: '',
+  search: '',
   page: 1,
   currentPage: Ember.computed('model.players', function() {
     return this.get('model.players.meta.current_page');
