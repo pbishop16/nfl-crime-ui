@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col m6">
+    <div class="card grey lighten-2">
+      <div class="card-content black-text team-card">
+        <span class="card-title">Position: {{model.name}}</span>
+        <p>Player Count: {{playerCount}}</p>
+        <hr>
+        <h6>Associated Players:</h6>
+        <ul>
+          {{#each model.players as |player|}}
+            <li>{{#link-to 'players.player' player.id}}{{player.name}}{{/link-to}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="card-action">
+
+      </div>
+    </div>
+  </div>
+</div>

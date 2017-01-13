@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s12">
+    <h5>Filter by Category:</h5>  {{input value=cat class="" placeholder="Example: DUI"}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s6">
+    <h5>All Crime Categories:</h5>
+    <ul class="collection crime-category-list">
+      {{#each filteredCategories as |category|}}
+        {{#link-to 'crime-categories.crime-category' category.id tagName="li" class="collection-item crime-category-item"}}
+          {{category.category}} | Count - {{category.crimeCount}}
+        {{/link-to}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col s6">
+    <h5>Top 10 Most Notorious Categories:</h5>
+    <ul class="collection player-list">
+      {{#each mostNotorious as |category|}}
+        {{#link-to 'crime-categories.crime-category' category.id tagName="li" class="collection-item category-item"}}
+          {{category.category}} | Count: {{category.crimeCount}}
+        {{/link-to}}
+      {{/each}}
+    </ul>
+  </div>
+</div>

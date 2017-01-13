@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col s6">
+    <h5>Positions Sorted by Most Notorious:</h5>
+    <ul class="collection position-list">
+      {{#each sortedArrestCount as |position|}}
+        {{#link-to 'positions.position' position.id tagName="li" class="collection-item position-item"}}
+          {{position.name}} | Count - {{position.crimeCount}}
+        {{/link-to}}
+      {{/each}}
+    </ul>
+  </div>
+</div>

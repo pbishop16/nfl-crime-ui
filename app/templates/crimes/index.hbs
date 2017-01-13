@@ -1,0 +1,20 @@
+
+<div class="row">
+  <div class="col s6">
+    <h4>All Crimes:</h4>
+    <ul class="collection crime-list">
+      {{#each filteredCrimes as |crime|}}
+        {{#link-to 'crimes.crime' crime.id tagName="li" class="collection-item crime-item"}}
+          {{crime.name}} | Encounter - {{crime.encounter}}
+        {{/link-to}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="pagination col s6 center-align">
+    <a class="btn-floating" {{action 'previousPage'}}><i class="material-icons">fast_rewind</i></a>
+    <span class=""> Page {{currentPage}} of {{pagesTotal}} </span>
+    <a class="btn-floating" {{action 'nextPage'}}><i class="material-icons">fast_forward</i></a>
+  </div>
+</div>

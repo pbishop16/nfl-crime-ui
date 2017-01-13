@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s12">
+    <h5>Filter by Team Code:</h5>  {{input value=code class="" placeholder="Enter any of the three letters of the Team Code: SEA"}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s6">
+    <h4>All Teams:</h4>
+    <ul class="collection team-list">
+      {{#each filteredTeams as |team|}}
+        {{#link-to 'teams.team' team.id tagName="li" class="collection-item team-item"}}
+          {{team.teamName}}
+        {{/link-to}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col s6">
+    <h4>Top 10 Most Notorious Teams:</h4>
+    <ul class="collection team-list">
+      {{#each mostNotorious as |team|}}
+        {{#link-to 'teams.team' team.id tagName="li" class="collection-item team-item"}}
+          {{team.teamName}} | {{team.crimeCount}}
+        {{/link-to}}
+      {{/each}}
+    </ul>
+  </div>
+</div>

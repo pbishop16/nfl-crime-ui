@@ -1,16 +1,26 @@
-<div class="card-content white-text team-card">
-  <span class="card-title">{{model.teamName}}</span>
-  <p>Team Code: {{model.team}}</p>
-  <p>City: {{model.teamCity}}</p>
-  <p>Arrest count: {{model.arrestCount}}</p>
-  <hr>
-  <h6>Associated Players:</h6>
-  <ul>
-    {{#each model.players as |player|}}
-      <li>{{player.name}}</li>
-    {{/each}}
-  </ul>
-</div>
-<div class="card-action">
 
-</div>
+  <div class="row">
+    <div class="col m6">
+      <div class="card grey lighten-2">
+        <div class="card-content white-text team-card">
+          <span class="card-title black-text">{{model.teamName}}</span>
+          <div class="black-text">
+            <p>Team Code: {{model.teamCode}}</p>
+            <p>City: {{model.teamCity}}</p>
+            <p>Arrest count: {{model.crimeCount}}</p>
+          </div>
+
+          <hr>
+          <h6 class="black-text">Associated Players:</h6>
+          <ul>
+            {{#each model.players as |player|}}
+              <li>{{#link-to 'players.player' player.id}}{{player.name}}{{/link-to}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="card-action">
+
+        </div>
+      </div>
+    </div>
+  </div>

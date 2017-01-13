@@ -1,5 +1,4 @@
 import DS from 'ember-data';
-import Ember from 'ember';
 
 const { attr, belongsTo } = DS;
 
@@ -18,5 +17,5 @@ export default DS.Model.extend({
   year: attr('string'),
   month: attr('string'),
   day: attr('string'),
-  playerId: belongsTo('player', {async: false})
+  player: belongsTo('player', {async: false})
 });
