@@ -1,10 +1,11 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 const { attr, belongsTo } = DS;
 
 export default DS.Model.extend({
-  arrestStatsId: attr('number'),
-  date: attr('string'),
+  // arrestStatsId: attr('number'),
+  // date: attr('string'),
   team: attr('string'),
   teamName: attr('string'),
   teamCity: attr('string'),
@@ -14,11 +15,8 @@ export default DS.Model.extend({
   category: attr('string'),
   description: attr('string'),
   outcome: attr('string'),
-  generalCategoryId: attr('number'),
-  legalLevelId: attr('number'),
-  resolutionCategoryId: attr('number'),
   year: attr('string'),
   month: attr('string'),
   day: attr('string'),
-  playerId: belongsTo('player')
+  playerId: belongsTo('player', {async: false})
 });

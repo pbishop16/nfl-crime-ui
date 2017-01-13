@@ -18,7 +18,7 @@ export default [
     year: "2016",
     month: "10",
     day: "2",
-    player_id: 2
+    player: 2
   },
   {
     id: 2,

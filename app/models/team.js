@@ -7,5 +7,6 @@ export default DS.Model.extend({
   teamName: attr('string'),
   teamCity: attr('string'),
   arrestCount: attr('number'),
-  players: hasMany('player')
+  players: hasMany('player', {async: false}),
+  crimes: hasMany('crime', {async: false})
 });
