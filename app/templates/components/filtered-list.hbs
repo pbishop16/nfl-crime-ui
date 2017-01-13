@@ -1,0 +1,7 @@
+<ul class="collection player-list">
+  {{#each list as |player|}}
+    {{#link-to 'players.player' player.id tagName="li" class="collection-item player-item"}}
+      {{player.name}}
+    {{/link-to}}
+  {{/each}}
+</ul>

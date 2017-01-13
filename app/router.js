@@ -16,6 +16,12 @@ Router.map(function() {
   this.route('crimes', function() {
     this.route('crime', {path: ':crime_id'});
   });
+  this.route('crime-categories', function() {
+    this.route('crime-category', {path: ':crime_category_id'});
+  });
+  this.route('positions', function() {
+    this.route('position', {path: ':position_id'});
+  });
 });
 
 export default Router;
